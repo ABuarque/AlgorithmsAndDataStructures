@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -8,16 +9,12 @@ void swap(int* a, int* b) {
 }
 
 void quickSort(int v[], int start, int end) {
-	if(start >= end)
+	if(start >= end) 
 		return;
 	int left = start;
 	int right = end;
 	int pivot = v[(left + right) / 2];
 	while(left <= right) {
-		// >>>>>>>>>>>>>>>>>>>
-		//while(v[left] > pivot) left++; 
-		//while(v[right] < pivot) right--;
-		//<<<<<<<<<<<<<<<<<<<<<
 		while(v[left] < pivot) left++; 
 		while(v[right] > pivot) right--;
 		if(left <= right) {
@@ -33,7 +30,7 @@ void quickSort(int v[], int start, int end) {
 int main() {
 	int x[] = {1,-2,3,-11,3, 33, 100, -100, 3,4,5};
 	int size = sizeof(x) / sizeof(x[0]);
-	quickSort(x,0, size - 1);
+	quickSort(x, 0, size - 1);
 	for(int i = 0; i < size; i++)
 		printf("%d ", x[i]);
 	printf("\n");
